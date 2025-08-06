@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chocolate Wrapper Business Design System - Premium chocolate-inspired colors */
+
+@layer base {
+  :root {
+    /* Base colors - warm cream background */
+    --background: 35 20% 97%;
+    --foreground: 25 30% 15%;
+
+    /* Card colors - subtle warmth */
+    --card: 35 15% 99%;
+    --card-foreground: 25 30% 15%;
+
+    /* Popover colors */
+    --popover: 35 15% 99%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - rich chocolate brown */
+    --primary: 25 45% 25%;
+    --primary-foreground: 35 20% 97%;
+    --primary-glow: 25 55% 35%;
+
+    /* Secondary - warm gold */
+    --secondary: 45 85% 70%;
+    --secondary-foreground: 25 45% 25%;
+
+    /* Muted - soft beige */
+    --muted: 35 25% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Accent - premium gold */
+    --accent: 45 90% 65%;
+    --accent-foreground: 25 45% 25%;
+
+    /* Success - mint green for positive actions */
+    --success: 155 65% 45%;
+    --success-foreground: 35 20% 97%;
+
+    /* Destructive colors */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 35 20% 97%;
+
+    /* Border and input */
+    --border: 35 20% 85%;
+    --input: 35 20% 88%;
+    --ring: 25 45% 25%;
+
+    /* Premium gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(25 55% 35%) 50%, hsl(45 85% 70%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(25 45% 25% / 0.8) 100%);
+
+    /* Elegant shadows */
+    --shadow-premium: 0 10px 40px -10px hsl(var(--primary) / 0.3);
+    --shadow-gold: 0 8px 30px -8px hsl(var(--accent) / 0.4);
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+
+    /* Smooth transitions */
+    --transition-premium: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Premium animations for chocolate business */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-gold {
+    animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2.5s linear infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+  
+  /* Hover effects */
+  .hover-lift {
+    transition: var(--transition-premium);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-premium);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-gold);
+    transform: scale(1.02);
+  }
+  
+  /* Special offer highlight animation */
+  .special-offer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .special-offer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.3), transparent);
+    animation: shine 3s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px hsl(var(--accent) / 0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Custom Button Animations */
+@keyframes rainbow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(236, 72, 153, 0.3), 0 0 60px rgba(239, 68, 68, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6), 0 0 60px rgba(236, 72, 153, 0.5), 0 0 90px rgba(239, 68, 68, 0.4);
+  }
+}
+
+@keyframes glow-emerald {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6), 0 0 35px rgba(20, 184, 166, 0.4);
+  }
+}
+
+@keyframes fire-glow {
+  0%, 100% { 
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.4), 0 0 50px rgba(249, 115, 22, 0.3), 0 0 75px rgba(239, 68, 68, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(251, 191, 36, 0.6), 0 0 70px rgba(249, 115, 22, 0.5), 0 0 105px rgba(239, 68, 68, 0.4);
+  }
+}
+
+@keyframes wiggle {
+  0%, 7%, 14%, 21%, 28%, 35%, 42%, 49%, 56%, 63%, 70%, 77%, 84%, 91%, 98%, 100% {
+    transform: rotate(0deg);
+  }
+  3.5% { transform: rotate(2deg); }
+  10.5% { transform: rotate(-2deg); }
+  17.5% { transform: rotate(2deg); }
+  24.5% { transform: rotate(-2deg); }
+  31.5% { transform: rotate(2deg); }
+  38.5% { transform: rotate(-2deg); }
+  45.5% { transform: rotate(2deg); }
+  52.5% { transform: rotate(-2deg); }
+  59.5% { transform: rotate(2deg); }
+  66.5% { transform: rotate(-2deg); }
+  73.5% { transform: rotate(2deg); }
+  80.5% { transform: rotate(-2deg); }
+  87.5% { transform: rotate(2deg); }
+  94.5% { transform: rotate(-2deg); }
+}
+
+/* Button utility classes */
+.btn-rainbow-pulse {
+  animation: rainbow-pulse 2s infinite;
+}
+
+.btn-emerald-glow {
+  animation: glow-emerald 2s infinite;
+}
+
+.btn-fire-glow {
+  animation: fire-glow 2s infinite;
+}
+
+.btn-wiggle {
+  animation: wiggle 2s infinite;
+}
+
+/* Hero Heading Animations */
+@keyframes text-glow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5), 0 0 20px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.2);
+  }
+  50% { 
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.8), 0 0 30px rgba(251, 191, 36, 0.6), 0 0 40px rgba(251, 191, 36, 0.4);
+  }
+}
+
+@keyframes letter-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes color-shift {
+  0% { color: #f59e0b; }
+  25% { color: #ec4899; }
+  50% { color: #8b5cf6; }
+  75% { color: #06b6d4; }
+  100% { color: #f59e0b; }
+}
+
+.text-glow {
+  animation: text-glow 3s infinite;
+}
+
+.letter-bounce {
+  animation: letter-bounce 2s infinite;
+}
+
+.color-shift {
+  animation: color-shift 4s infinite;
+}
