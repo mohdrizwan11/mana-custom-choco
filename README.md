@@ -13,7 +13,7 @@ A modern, responsive website for custom chocolate wrapper business with integrat
 
 ## 🚀 Live Website
 
-Visit: [https://mana-custom-choco-website.vercel.app](https://mana-custom-choco-website.vercel.app)
+Visit: [https://mana-custom-choco.vercel.app/](https://mana-custom-choco.vercel.app/)
 
 ## 🔐 Admin Access
 
